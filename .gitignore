@@ -1,0 +1,96 @@
+# ==============================================================================
+# CivicRoute – Root .gitignore
+# Prevents sensitive credentials, virtual environments, local databases,
+# and build artifacts from being committed to Git or pushed to GitHub.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment & Secret Configuration (CRITICAL - NEVER COMMIT REAL SECRETS)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.env.local
+*.env.development
+*.env.production
+*.env.test
+backend/.env
+backend/.env.*
+civicroute/.env
+civicroute/.env.*
+civicroute/.env.local
+civicroute/.env.production
+
+# Allow tracking example environment templates only
+!.env.example
+!backend/.env.example
+!civicroute/.env.example
+
+# ------------------------------------------------------------------------------
+# 2. Local Database Files & SQLite State
+# ------------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+civicroute.db
+backend/civicroute.db
+
+# ------------------------------------------------------------------------------
+# 3. Python Virtual Environments & Bytecode
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+__pycache__/
+*/__pycache__/
+backend/__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# ------------------------------------------------------------------------------
+# 4. Node.js Dependencies & Frontend Build Artifacts
+# ------------------------------------------------------------------------------
+node_modules/
+civicroute/node_modules/
+dist/
+dist-ssr/
+civicroute/dist/
+civicroute/dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------------------------------------------------------------
+# 5. IDE, Editor & OS System Files
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------------------------
+# 6. Test & Coverage Outputs
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+logs/
+

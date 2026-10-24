@@ -1,0 +1,19 @@
+# ==============================================================================
+# CivicRoute – Backend .gitignore
+# ==============================================================================
+.env
+.env.*
+*.env
+*.db
+*.sqlite
+*.sqlite3
+civicroute.db
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+
+# Allow tracking example environment templates only
+!.env.example
+
