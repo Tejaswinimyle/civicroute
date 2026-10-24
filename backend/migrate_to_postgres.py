@@ -22,7 +22,7 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 if CURRENT_DIR not in sys.path:
     sys.path.insert(0, CURRENT_DIR)
 
-from database import Base
+from database import Base, normalize_database_url
 from models import (
     User,
     Authority,
@@ -68,9 +68,8 @@ def run_migration():
         print("Or set TARGET_DATABASE_URL in your environment / backend/.env file.\n")
         sys.exit(1)
 
-    # Normalize url
-    if target_url.startswith("postgres://"):
-        target_url = target_url.replace("postgres://", "postgresql://", 1)
+    # Normalize url to use postgresql+psycopg2://
+    target_url = normalize_database_url(target_url)
 
     sqlite_path = os.path.join(CURRENT_DIR, "civicroute.db")
     if not os.path.exists(sqlite_path):
